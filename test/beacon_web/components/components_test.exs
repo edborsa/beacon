@@ -73,13 +73,14 @@ defmodule BeaconWeb.ComponentsTest do
   defp create_page_with_component(template) do
     layout = published_layout_fixture()
 
-    published_page_fixture(
-      layout_id: layout.id,
-      path: "home",
-      template: template
-    )
+    page_home =
+      page_fixture(
+        layout_id: layout.id,
+        path: "home",
+        template: template
+      )
 
-    Beacon.Loader.load_components(:my_site)
-    Beacon.Loader.load_pages(:my_site)
+    Content.publish_page(page_home)
+    Beacon.reload_site(:my_site)
   end
 end
