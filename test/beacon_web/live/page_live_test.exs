@@ -53,6 +53,7 @@ defmodule BeaconWeb.Live.PageLiveTest do
           <%= if assigns[:message], do: assigns.message %>
 
           <%= dynamic_helper("upcase", %{name: "test_name"}) %>
+          <BeaconWeb.Components.reading_time />
         </main>
         """,
         meta_tags: [
@@ -90,6 +91,16 @@ defmodule BeaconWeb.Live.PageLiveTest do
     Beacon.reload_site(:my_site)
 
     [layout: layout]
+  end
+
+  describe "meta tags 2" do
+    setup [:create_page]
+
+    test "merge layout, page, and site", %{conn: conn} do
+      {:ok, view, html} = live(conn, "/home")
+
+      assert render(view) == "FOO"
+    end
   end
 
   describe "meta tags" do
