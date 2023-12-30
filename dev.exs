@@ -263,8 +263,6 @@ dev_seeds = fn ->
           Sample component: <%= my_component("sample_component", val: 1) %>
         </div>
 
-        <BeaconWeb.Components.reading_time />
-
         <div>
           <BeaconWeb.Components.image_set asset={@beacon_live_data[:img1]} sources={["480w"]} width="200px" />
         </div>
@@ -760,10 +758,218 @@ dy_seeds = fn ->
               <div class="flex flex-col max-w-4xl mx-auto text-center">
                 <%!-- Intro headings --%>
                 <div class="sm:absolute sm:top-10 sm:left-0 sm:w-full xl:static xl:top-auto xl:left-auto flex flex-col">
-                  <BeaconWeb.Components.reading_time />
+                  <h1 class="font-heading lg:text-4xl lg:leading-normal xl:text-5xl xl:leading-normal mb-3 text-3xl leading-normal" id="region01">
+                    Hi. We’re a
+                    <span class="to-dy-gradient-pink bg-clip-text bg-gradient-to-r from-blue-500 font-bold text-transparent">
+                      digital product consultancy.
+                    </span>
+                  </h1>
+                  <h2 class="-order-1 md:text-base md:leading-7 lg:mb-5 lg:text-lg xl:mb-6 xl:text-xl xl:leading-8 mb-3 text-sm font-semibold leading-6">
+                    Growth, Uninhibited
+                  </h2>
+                </div>
+                <%!-- Intro text --%>
+                <div>
+                  <p class="lg:mb-12 lg:text-2xl lg:leading-loose xl:mb-15 mb-10 text-xl leading-8">
+                    We partner with innovative teams to build products that scale
+                    as their users, features, and complexity grow.
+                  </p>
+                  <.link class="link-default lg:bg-white/50 py-3 px-4" navigate="/contact/hire-us">
+                    Get in Touch with Us
+                  </.link>
                 </div>
               </div>
             </div>
+            <%!-- Intro image --%>
+            <div class="-order-1">
+              <%!-- TODO: update with finalized design image if provided --%>
+              <img class="w-full h-auto" width="1920" height="1422" src="https://assets.dockyard.com/images/narwin-home-flare-v2.svg" alt="Narwin waving while standing in front of a vast horizon of ocean waves and mountains" />
+            </div>
+          </div>
+          <%!-- Logos --%>
+          <div class="md:py-18 py-15 lg:py-20 xl:pt-0 px-4">
+            <div class="md:mb-12 lg:mb-16 xl:mb-20 max-w-6xl mx-auto mb-10">
+              <ul class="md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-20 grid items-center grid-cols-2 gap-8">
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client_apple.svg" width="122" height="150" alt="Apple" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client-nasdaq-new.svg" width="168" height="48" alt="Nasdaq" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client_netflix.svg" width="300" height="80" alt="Netflix" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client-adobe.svg" width="54" height="14" alt="Adobe" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client_mcgraw-hill.svg" width="150" height="150" alt="McGraw Hill" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client-livenation.svg" width="1302" height="277" alt="Live Nation" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-8">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client-collegevine-new.svg" width="147" height="32" alt="CollegeVine" />
+                </li>
+                <li class="basis-1/2 grow-0 shrink flex justify-center h-6">
+                  <img class="w-auto h-full" src="https://assets.dockyard.com/images/client-constant-contact-new.svg" width="332" height="57" alt="Constant Contact" />
+                </li>
+              </ul>
+            </div>
+            <div class="max-w-5xl mx-auto">
+              <p class="font-heading lg:text-2xl lg:leading-loose text-xl font-medium leading-8 text-center">
+                For more than a decade, Fortune 500s and industry disruptors have
+                trusted us to help them overcome complex product challenges and
+                bring products from idea to impact.
+              </p>
+            </div>
+          </div>
+        </section>
+        <%!-- Services --%>
+        <section class="py-15 md:py-20 lg:py-24 xl:py-30 bg-gray-50 px-4" aria-labelledby="region02">
+          <div class="max-w-1200 md:grid md:grid-cols-5 md:gap-x-10 lg:gap-x-20 xl:gap-x-30 mx-auto">
+            <div class="mb-15 md:col-span-2 md:mb-0">
+              <h2 class="font-heading md:text-4xl lg:text-5xl xl:text-6xl mb-4 text-3xl font-extrabold" id="region02">
+                How we help
+              </h2>
+              <p class="lg:mb-12 mb-10 text-xl leading-8 text-gray-800">
+                We pair modern technologies with design thinking to turn user
+                insights into production-ready apps (and mentor teams along the
+                way).
+              </p>
+              <.link class="link-default link-default--gray-50" navigate="/services">
+                See All Services
+              </.link>
+            </div>
+            <ul class="md:col-span-3 md:-my-4 xl:-my-10 xl:-mx-10 xl:-space-y-5 -mx-4">
+              <li class="transition-link focus-within:bg-white focus-within:ring-2 focus-within:ring-blue-200 hover:bg-white active:bg-white xl:p-10 rounded-2xl relative block p-4 duration-300">
+                <h3 class="font-heading lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal mb-2 text-xl font-medium leading-8">
+                  <.link class="after:absolute after:inset-0 after:cursor-pointer focus:outline-none" navigate="/services/digital-product-strategy">
+                    Product Strategy & Discovery
+                  </.link>
+                </h3>
+                <p class="lg:text-lg lg:leading-loose leading-7 text-gray-800">
+                  We guide clients – uncovering user needs and aligning business
+                  goals – to make sure products are on the right path. Then, we
+                  create a product roadmap that sets the stage for successful
+                  delivery.
+                </p>
+              </li>
+              <li class="transition-link focus-within:bg-white focus-within:ring-2 focus-within:ring-blue-200 hover:bg-white active:bg-white xl:p-10 rounded-2xl relative block p-4 duration-300">
+                <h3 class="font-heading lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal mb-2 text-xl font-medium leading-8">
+                  <.link class="after:absolute after:inset-0 after:cursor-pointer focus:outline-none" navigate="/services/design">
+                    Product Design & Delivery
+                  </.link>
+                </h3>
+                <p class="lg:text-lg lg:leading-loose leading-7 text-gray-800">
+                  We take product visions and add design, UX, and engineering to
+                  create the complete package — aka reliable, scalable,
+                  sustainable, custom software that our clients and their users
+                  will love.
+                </p>
+              </li>
+              <li class="transition-link focus-within:bg-white focus-within:ring-2 focus-within:ring-blue-200 hover:bg-white active:bg-white xl:p-10 rounded-2xl relative block p-4 duration-300">
+                <h3 class="font-heading lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal mb-2 text-xl font-medium leading-8">
+                  <.link class="after:absolute after:inset-0 after:cursor-pointer focus:outline-none" navigate="/services/engineering">
+                    Engineering Consulting & Staffing
+                  </.link>
+                </h3>
+                <p class="lg:text-lg lg:leading-loose leading-7 text-gray-800">
+                  Accelerate time to product success with expert engineering
+                  guidance — whether you need to augment your team, audit an
+                  existing codebase, or train in a specific web technology.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <%!-- Collaboration --%>
+        <section aria-labelledby="big-on-collaboration" class="pb-15 md:pb-20 lg:pb-24 xl:pb-30 px-4">
+          <div class="md:grid-cols-12 md:items-center md:gap-x-10 lg:gap-x-12 xl:gap-x-0 max-w-7xl grid mx-auto">
+            <div class="xlg:col-end-13 md:col-span-6 xl:col-start-8">
+              <h2 class="font-heading lg:text-3xl lg:leading-normal mb-4 text-2xl font-medium" id="big-on-collaboration">
+                Big on collaboration, <br />Small on surprises
+              </h2>
+              <p class="lg:mb-12 lg:text-xl lg:leading-8 mb-10 text-lg leading-loose text-gray-700">
+                We become an extension of your team using constant communication
+                and knowledge sharing each step of the way.
+              </p>
+              <.link class="link-default" navigate="/why-dockyard">
+                Why DockYard?
+              </.link>
+            </div>
+            <div class="-order-1 md:col-span-6 md:mb-0 mb-10">
+              <img class="w-full h-auto max-w-full" width="1087" height="755" src="https://assets.dockyard.com/images/narwin-f2f-meeting-og-v2.svg" alt="Narwin sitting at a table in a face-to-face meeting with two collaborators" loading="lazy" />
+            </div>
+          </div>
+        </section>
+        <%!-- Quote --%>
+        <div class="py-15 md:pb-20 md:pt-24 lg:pb-24 lg:pt-30 xl:pb-30 px-4 bg-gray-100">
+          <figure class="max-w-3xl mx-auto">
+            <blockquote>
+              <div class="lg:mb-8 xl:mb-10 mb-6 mx-auto lg:w-[56px] lg:h-[43px]">
+                <svg class="w-auto h-full mx-auto" width="46" height="35" viewBox="0 0 46 35" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+                  <path
+                    d="M4.4575 31.3007C1.8825 28.5657 0.5 25.4982 0.5 20.5257C0.5 11.7757 6.6425 3.93316 15.575 0.0556641L17.8075 3.50066C9.47 8.01066 7.84 13.8632 7.19 17.5532C8.5325 16.8582 10.29 16.6157 12.0125 16.7757C16.5225 17.1932 20.0775 20.8957 20.0775 25.4982C20.0775 27.8188 19.1556 30.0444 17.5147 31.6854C15.8737 33.3263 13.6481 34.2482 11.3275 34.2482C10.0441 34.2369 8.77584 33.9706 7.5964 33.4646C6.41697 32.9585 5.34997 32.223 4.4575 31.3007ZM29.4575 31.3007C26.8825 28.5657 25.5 25.4982 25.5 20.5257C25.5 11.7757 31.6425 3.93316 40.575 0.0556641L42.8075 3.50066C34.47 8.01066 32.84 13.8632 32.19 17.5532C33.5325 16.8582 35.29 16.6157 37.0125 16.7757C41.5225 17.1932 45.0775 20.8957 45.0775 25.4982C45.0775 27.8188 44.1556 30.0444 42.5147 31.6854C40.8737 33.3263 38.6481 34.2482 36.3275 34.2482C35.0441 34.2369 33.7758 33.9706 32.5964 33.4646C31.417 32.9585 30.35 32.223 29.4575 31.3007Z"
+                    fill="#CAD5E0"
+                  />
+                </svg>
+              </div>
+              <p class="font-heading lg:text-left mb-8 text-2xl font-medium leading-10 text-center">
+                It would be impossible for me to adequately sum up several years
+                with DockYard that for me was a delight, source of growth, and
+                tremendous learning experience. Overall my experience with the
+                partnership was extremely positive.
+              </p>
+            </blockquote>
+            <figcaption>
+              <div class="gap-x-4 flex items-center justify-center">
+                <div class="text-center">
+                  <p class="text-lg font-bold leading-7 text-gray-800">Tim H.</p>
+                  <p class="block text-sm text-gray-800">Netflix Studios</p>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <%!-- News --%>
+        <section class="py-15 md:py-20 lg:py-24 xl:py-30 px-4" aria-labelledby="news">
+          <div class="max-w-7xl mx-auto text-center">
+            <svg class="md:mb-10 lg:mb-14 xl:mb-20 mx-auto mb-8" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+              <path
+                d="M35.9326 31.6743L37.8049 32.2551C38.8161 32.5678 39.7909 31.6703 39.5553 30.6346L37.5775 21.8987C37.3419 20.8671 36.0789 20.4731 35.2991 21.192L28.7238 27.2759C27.944 27.9947 28.2364 29.2863 29.2517 29.603L30.9656 30.1351C29.9422 31.3088 28.736 32.316 27.3876 33.112C25.8605 34.0136 24.1832 34.6269 22.4368 34.9193V20.331H26.6566C28.0009 20.331 29.0934 19.2386 29.0934 17.8942C29.0934 16.5499 28.0009 15.4574 26.6566 15.4574H22.4368V13.4471C25.0686 12.4561 26.9449 9.91777 26.9449 6.94487C26.9449 3.11504 23.8299 0 20 0C16.1702 0 13.0552 3.11504 13.0552 6.94487C13.0552 9.91777 14.9315 12.4602 17.5632 13.4471V15.4574H13.3435C11.9992 15.4574 10.9067 16.5499 10.9067 17.8942C10.9067 19.2386 11.9992 20.331 13.3435 20.331H17.5632V34.9193C15.8209 34.6228 14.1395 34.0136 12.6125 33.112C11.2682 32.3119 10.0579 31.3047 9.03444 30.131L10.7483 29.599C11.7596 29.2863 12.052 27.9947 11.2763 27.2718L4.701 21.192C3.92123 20.4732 2.65816 20.8671 2.4226 21.8987L0.444731 30.6386C0.209174 31.6702 1.18389 32.5719 2.19516 32.2591L4.06744 31.6783C5.65948 33.9608 7.73076 35.8859 10.131 37.3073C13.108 39.07 16.5235 40 20 40C23.4765 40 26.8881 39.07 29.8691 37.3073C32.2693 35.8819 34.3405 33.9568 35.9326 31.6743ZM22.0713 6.94081C22.0713 7.2576 21.9982 7.55814 21.8723 7.83024C21.5393 8.52879 20.8245 9.01209 20 9.01209C19.1756 9.01209 18.4608 8.52879 18.1278 7.83024C17.9978 7.5622 17.9288 7.26166 17.9288 6.94081C17.9288 5.79958 18.8588 4.86953 20 4.86953C21.1413 4.86953 22.0713 5.79958 22.0713 6.94081Z"
+                fill="#CAD5E0"
+              />
+            </svg>
+            <h2 class="font-heading lg:text-7xl lg:leading-none xl:text-8xl mx-auto mb-8 text-6xl font-extrabold leading-none" id="news">
+              Share the news
+            </h2>
+            <div class="max-w-xl mx-auto">
+              <p class="font-xl lg:mb-12 lg:text-2xl lg:leading-10 xl:mb-15 mb-10 leading-8">
+                We have been featured in numerous publications and media since our
+                inception a decade ago.
+              </p>
+              <a class="link-default" href="/press/releases">
+                See News and Media
+              </a>
+            </div>
+          </div>
+        </section>
+        <%!-- Product delivery success --%>
+        <section class="bg-dy-purple-light py-15 md:py-20 lg:py-24 xl:py-30 px-4" aria-labelledby="product-delivery-success">
+          <div class="mb-15 md:mb-12 lg:mb-10 xl:mb-6 max-w-lg mx-auto text-center">
+            <h2 class="mb-5 text-3xl font-medium" id="product-delivery-success">
+              Let's accelerate time to product <span class="text-dy-red line-through">delivery</span> success
+            </h2>
+            <p class="mb-8 text-xl leading-8 text-gray-700">
+              Tell us what you’re looking for and how we can help.
+            </p>
+            <.link class="link-default link-default--purple" navigate="/contact/hire-us">
+              Connect with Us
+            </.link>
+          </div>
+          <div class="max-w-3xl mx-auto">
+            <img class="w-full h-auto" src="https://assets.dockyard.com/images/narwin-trophy-flag-og-v2.svg" width="1067" height="881" alt="Narwin celebrating while holding a trophy for 'Product Success' and a DockYard flag" loading="lazy" />
           </div>
         </section>
       </main>
