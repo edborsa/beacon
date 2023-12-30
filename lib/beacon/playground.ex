@@ -1,4 +1,18 @@
 defmodule Beacon.Playground do
+  @moduledoc """
+  to start: iex -S mix dev
+  You have routes:
+  - http://localhost:4001/dy/
+  - http://localhost:4001/dy/home
+  """
+
+  @doc """
+  sm	640px	@media (min-width: 640px) { ... }
+  md	768px	@media (min-width: 768px) { ... }
+  lg	1024px	@media (min-width: 1024px) { ... }
+  xl	1280px	@media (min-width: 1280px) { ... }
+  2xl	1536px	@media (min-width: 1536px) { ... }
+  """
   def page_content() do
     """
     <main class="font-body text-gray-900">
@@ -17,9 +31,14 @@ defmodule Beacon.Playground do
     """
   end
 
-  def update_dy_home_page() do
-    Beacon.Content.list_pages("dy")
-    |> List.first()
+  @doc """
+    This is the "/dev/home"
+    Sample call:
+    Beacon.Playground.update_dev_home_page()
+  """
+  def update_dev_home_page() do
+    Beacon.Content.list_pages("dev")
+    |> Enum.find(fn x -> x.title == "dev home" end)
     |> Beacon.Content.update_page(%{template: page_content()})
     |> elem(1)
     |> Beacon.Content.publish_page()
