@@ -21,10 +21,28 @@ defmodule Beacon.Playground do
           <div class="xl:absolute xl:top-10 xl:left-0 xl:w-full 2xl:top-20 px-4">
             <div class="flex flex-col max-w-4xl mx-auto text-center">
               <div class="sm:absolute sm:top-10 sm:left-0 sm:w-full xl:static xl:top-auto xl:left-auto flex flex-col">
-                <pre> <%= inspect( Beacon.Content.list_pages(:dev, per_page: 3), struct: false, pretty: true) %></pre>
-                <BeaconWeb.Components.unordered_list :let={fruit} entries={Beacon.Content.list_pages(:dev, per_page: 3)}>
-                  I like <b><%= fruit.title %></b>!
-                </BeaconWeb.Components.unordered_list>
+                <BeaconWeb.Components.featured_pages :let={page} pages={Beacon.Content.list_pages(Process.get(:__beacon_site__), per_page: 3)}>
+                  <article class="hover:ring-2 hover:ring-gray-200 hover:ring-offset-8 flex relative flex-col rounded-lg xl:hover:ring-offset-[12px] 2xl:hover:ring-offset-[16px] active:ring-gray-200 active:ring-offset-8 xl:active:ring-offset-[12px] 2xl:active:ring-offset-[16px] focus-within:ring-2 focus-within:ring-blue-200 focus-within:ring-offset-8 xl:focus-within:ring-offset-[12px] hover:bg-white active:bg-white trasition-all duration-300">
+                    <div class="flex flex-col">
+                      <h3 class="font-heading lg:text-xl lg:leading-8 text-lg font-bold leading-7">
+                        <a href={page.path} data-phx-link="redirect" data-phx-link-state="push" class="after:absolute after:inset-0 after:cursor-pointer focus:outline-none">
+                          <%= page.title %>
+                        </a>
+                      </h3>
+
+                      <div class="-order-1 flex gap-x-2 items-center mb-3">
+                        <div>
+                          <p class="font-bold text-gray-700"></p>
+                          <p class="text-eyebrow font-medium text-gray-500">
+                            <time datetime="2023-09-19">
+                              <%= DateTime.to_string(page.updated_at) %>
+                            </time>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </BeaconWeb.Components.featured_pages>
               </div>
             </div>
           </div>
