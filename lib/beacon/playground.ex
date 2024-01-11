@@ -21,7 +21,7 @@ defmodule Beacon.Playground do
           <div class="xl:absolute xl:top-10 xl:left-0 xl:w-full 2xl:top-20 px-4">
             <div class="flex flex-col max-w-4xl mx-auto text-center">
               <div class="sm:absolute sm:top-10 sm:left-0 sm:w-full xl:static xl:top-auto xl:left-auto flex flex-col">
-                <BeaconWeb.Components.featured_pages pages={Beacon.Content.list_pages(Process.get(:__beacon_site__), per_page: 3)} />
+                <BeaconWeb.Components.embed url="https://www.youtube.com/watch?v=giYbq4HmfGA" />
               </div>
             </div>
           </div>
